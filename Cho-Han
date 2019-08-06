@@ -1,0 +1,28 @@
+import random
+num1=random.randint(1,6)
+num2=random.randint(1,6)
+money = 100
+call="Odd"
+bet=10
+
+def results(num1, num2, call, bet):
+  if (num1+num2)%2==0:
+    result = "Even"
+  else:
+    result = "Odd"
+  if result == call:
+    return bet
+  else:
+    return -bet
+
+money_result=results(num1, num2, call, bet)
+
+def win_loss(money_result):
+  if money_result>0:
+    return "You Won! "
+  if money_result<0:
+    return "You Lost :( "
+
+money += money_result
+
+print (win_loss(money_result)+"You now have $"+str(money))
