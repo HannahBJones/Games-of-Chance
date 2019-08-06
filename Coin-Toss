@@ -1,0 +1,29 @@
+import random
+num=random.randint(0,1)
+
+#define your starting amount of money, call (Heads or Tails) and bet below
+money = 100
+call="Heads"
+bet=10
+
+def coin_toss(num, bet, call):
+  if num==0:
+    result="Heads"
+  elif num==1:
+    result="Tails"
+  if result==call:
+    return bet
+  elif not result==call:
+    return -bet
+
+money_result=coin_toss(num, bet, call)
+
+def win_loss(money_result):
+  if money_result>0:
+    return "You Won! "
+  if money_result<0:
+    return "You Lost :( "
+
+money += money_result
+  
+print (win_loss(money_result)+"You now have $"+str(money))
