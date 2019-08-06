@@ -1,0 +1,27 @@
+import random
+num1=random.randint(1,52)
+num2=random.randint(1,52)
+money = 100
+bet=10
+
+def bet_return(num1, num2, bet):
+  if num1%14>num2%14:
+    return bet
+  if num1%14<num2%14:
+    return -bet
+  else:
+    return 0
+
+money_result=bet_return(num1, num2, bet)
+
+def win_loss(money_result):
+  if money_result>0:
+    return "You Won! "
+  if money_result<0:
+    return "You Lost :( "
+  if money_result==0:
+    return "You Drew"
+
+money += money_result
+
+print(win_loss(money_result)+"You now have $"+str(money))
